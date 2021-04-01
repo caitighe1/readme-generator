@@ -66,5 +66,15 @@ const questions = [
           console.log('we did it!');
       });
   }
+
+  // TODO: Create a function to initialize app
+function init() {
+    inquirer
+        .prompt(questions)
+        .then( (response) => {
+            console.log(response);
+            writeToFile("README.md", generateMarkdown(response));
+        });
+}
  
   
