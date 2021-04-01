@@ -22,9 +22,27 @@ inquirer
     },
     {
         type: 'input',
-        name: 'installation',
-        message: 'What are the installation requirements?',
-        default: 'Just go on [official Node.js website](https://nodejs.org/) and download the installer. Also, be sure to have `git` available in your PATH',
+        name: 'installation and prerequisites',
+        message: 'What are the prerequisites and installation requirements?',
+        default: 'Make sure you have node installed and then run npm i inquirer',
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Usage',
+        default: 'var inquirer = require(\inquirer\) see examples'
+    },
+    {
+        type: 'input',
+        name: 'contributions',
+        message: 'Who has contributed to this project?',
+        default: 'Myself, Programming with Mosh, Jonathan Gardner, Robert Han, Andrew Finkernagel'
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Tests',
+        default: 'tests will be included in the demo'
     },
   ])
   .then(answers => {
