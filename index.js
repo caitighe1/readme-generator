@@ -1,6 +1,11 @@
-var inquirer = require('inquirer');
-inquirer
-  .prompt([
+const inquirer = require('inquirer');
+/* created file system to read files from computer */
+const fs = require('fs');
+
+/* to convert to HTML */
+const generateMarkdown = require('./utils/generateMarkdown');
+
+inquirer.prompt([
     /* Pass your questions in here */
     {
         type: 'input',
