@@ -4,29 +4,27 @@ inquirer
     /* Pass your questions in here */
     {
         type: 'input',
-        name: 'input_type',
+        name: 'name',
         message: 'What is your name?',
         default: 'Caitlin',
     },
     {
-        type: 'list',
-        name: 'list question',
-        message: 'What programming language do you like?',
-        choices:['Javascript', 'C++', 'Java', 'Python'],
-        default: 'Javascript'
-    },
-    {
-        type: 'checkbox',
-        name: 'checkbox question',
-        message: 'What borough do you live in?',
-        choices:['Queens', 'Brooklyn', 'Bronx', 'Manhattan'],
-        default: 'Queens'
+        type: 'input',
+        name: 'project title',
+        message: 'What is the title of your project?',
+        default: 'caitlins-readme-generator'
     },
     {
         type: 'input',
-        name: 'github',
-        message: 'What is your github name?',
-        default: 'caitighe1'
+        name: 'description',
+        message: 'Please describe your project in a couple of words',
+        default: 'Creating a command-line application that dynamically generates a professional README.md file from a users input using inquirer'
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'What are the installation requirements?',
+        default: 'Just go on [official Node.js website](https://nodejs.org/) and download the installer. Also, be sure to have `git` available in your PATH',
     },
   ])
   .then(answers => {
