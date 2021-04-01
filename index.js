@@ -41,8 +41,14 @@ inquirer
     {
         type: 'input',
         name: 'tests',
-        message: 'Tests',
-        default: 'tests will be included in the demo'
+        message: 'Test instructions',
+        default: 'tests will be included in the demo, open npm start in integrated terminal and follow the prompts'
+    },
+    {
+        type: 'list',
+        name: 'License list',
+        message: "which License are you using?",
+        choices: ['MIT', 'ISC', 'Microsoft Public License']
     },
   ])
   .then(answers => {
