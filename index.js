@@ -1,11 +1,13 @@
 const inquirer = require('inquirer');
-/* created file system to read files from computer */
-const fs = require('fs');
+/* file share */
 
-/* to convert to HTML */
+const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-inquirer.prompt([
+
+/* questions */
+
+const questions = [
     /* Pass your questions in here */
     {
         type: 'input',
@@ -55,9 +57,14 @@ inquirer.prompt([
         message: "which License are you using?",
         choices: ['MIT', 'ISC', 'Microsoft Public License']
     },
-  ])
-  .then(answers => {
-    // Use user feedback for... whatever!!
-    console.log(answers);
-  })
+  ];
+  // TODO: Create a function to write README file
+  
+  function writeToFile(fileName, data) {
+      fs.writeFile(fileName, data, 'utf-8', (err) => {
+          if(err) throw err;
+          console.log('we did it!');
+      });
+  }
+ 
   
