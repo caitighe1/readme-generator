@@ -6,8 +6,11 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 
 /* questions */
+function promptUser() {
+    return inquirer.prompt ([
+        {
 
-const questions = [
+        const questions = [
     /* Pass your questions in here */
     {
         type: 'input',
@@ -57,28 +60,21 @@ const questions = [
         message: "which License are you using?",
         choices: ['MIT', 'ISC', 'Microsoft Public License']
     },
+    ])
   ];
   // TODO: Create a function to write README file
   
-  function writeToFile(fileName, data) {
+function writeToFile(fileName, data) {
     const markDown = generateMarkdown.generateMarkdown(data);
-    
     /* async callback that will return a new promise after wrapping it with a resolve and rejection handler */
-    writeFileAsync(fileName, markDown);  
-    
-    {
-
-
-          if(err) throw err;
-          console.log('we did it!');
-      });
+        writeFileAsync(fileName, markDown);
   }
-
   // TODO: Create a function to initialize app
 function init() {
     inquirer
         .prompt(questions)
-        .then( (response) => {
+        .then( (data) => {
+            return writeToFile("README2.md, data")
             console.log(response);
             writeToFile("README.md", generateMarkdown(response));
         });
