@@ -1,8 +1,13 @@
 const inquirer = require('inquirer');
 /* file share */
-
+const util = require('util');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
+
+/* callback to promise based method */
+const writeFileAsync = util.promisify(fs.writeFile);
+
+
 
 
 /* questions */
