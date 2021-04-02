@@ -61,7 +61,14 @@ const questions = [
   // TODO: Create a function to write README file
   
   function writeToFile(fileName, data) {
-      fs.writeFile(fileName, data, 'utf-8', (err) => {
+    const markDown = generateMarkdown.generateMarkdown(data);
+    
+    /* async callback that will return a new promise after wrapping it with a resolve and rejection handler */
+    writeFileAsync(fileName, markDown);  
+    
+    {
+
+
           if(err) throw err;
           console.log('we did it!');
       });
