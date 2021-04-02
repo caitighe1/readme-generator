@@ -64,9 +64,9 @@ function promptUser() {
         name: 'License list',
         message: "which License are you using?",
         choices: ['MIT', 'ISC', 'Microsoft Public License']
-    },
+        ]},
     ])
-  ];
+}
   // TODO: Create a function to write README file
   
 function writeToFile(fileName, data) {
@@ -76,16 +76,14 @@ function writeToFile(fileName, data) {
   }
   // TODO: Create a function to initialize app
 function init() {
-    inquirer
+    promptUser()
         .prompt(questions)
         .then( (data) => {
             return writeToFile("README2.md, data")
-            console.log(response);
-            writeToFile("README.md", generateMarkdown(response));
-        });
+        })
+            .then( () => console.log("Nice job! You have created your README.md.") )
+            .catch( err => console.log(err) )
 }
 
 // Function call to initialize app
 init();
- 
-  
