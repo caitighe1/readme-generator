@@ -13,9 +13,6 @@ const writeFileAsync = util.promisify(fs.writeFile);
 /* questions */
 function promptUser() {
     return inquirer.prompt ([
-        {
-
-        const questions = [
     /* Pass your questions in here */
     {
         type: 'input',
@@ -64,9 +61,10 @@ function promptUser() {
         name: 'License list',
         message: "which License are you using?",
         choices: ['MIT', 'ISC', 'Microsoft Public License']
-        ]},
-    ])
+    },
+]);
 }
+
   // TODO: Create a function to write README file
   
 function writeToFile(fileName, data) {
