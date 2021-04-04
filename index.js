@@ -11,8 +11,7 @@ const writeFileAsync = util.promisify(fs.writeFile);
 
 
 /* questions */
-function promptUser() {
-    return inquirer.prompt ([
+const questions = [
     /* Pass your questions in here */
     {
         type: 'input',
@@ -22,7 +21,7 @@ function promptUser() {
     },
     {
         type: 'input',
-        name: 'project title',
+        name: 'projectTitle',
         message: 'What is the title of your project?',
         default: 'caitlins-readme-generator'
     },
@@ -58,30 +57,29 @@ function promptUser() {
     },
     {
         type: 'list',
-        name: 'License list',
+        name: 'licenseList',
         message: "which License are you using?",
         choices: ['MIT', 'ISC', 'Microsoft Public License']
-    },
-]);
+    }
+];
+// TODO: Create a function to write README file
+  function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err) throw err;
+        console.log(`Your file ${fileName}`);
+    });
 }
-
-  // TODO: Create a function to write README file
-  
-function writeToFile(fileName, data) {
-    const markDown = generateMarkdown.generateMarkdown(data);
-    /* async callback that will return a new promise after wrapping it with a resolve and rejection handler */
-        writeFileAsync(fileName, markDown);
-  }
   // TODO: Create a function to initialize app
 function init() {
-    promptUser()
+    console.log('Please enjoy your README generator journey');
+    inquirer
         .prompt(questions)
-        .then( (data) => {
-            return writeToFile("README2.md, data")
-        })
-            .then( () => console.log("Nice job! You have created your README.md.") )
-            .catch( err => console.log(err) )
-}
+        .then(data => {
+            const compiledAnswers = generateMarkdown(data);
+            newFileName = data.projectTitle + ".md";
 
+            writeToFile(newFileName, compiledAnswers);
+        });
+    }
 // Function call to initialize app
 init();
