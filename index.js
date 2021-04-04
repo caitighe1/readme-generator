@@ -81,7 +81,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then(function(response) {
-            const newFileName = 'README.md';
+            const newFileName = 'README2.md';
             const generatedReadMe = generateMarkdown(response)
             fs.writeFileSync(newFileName, generateMarkdown(response), function(err) {
                 if (err) {
