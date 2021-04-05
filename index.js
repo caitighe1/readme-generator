@@ -1,14 +1,6 @@
-const inquirer = require('inquirer');
-/* file share */
-//const util = require('util');
-const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
-
-/* callback to promise based method */
-//const writeFileAsync = util.promisify(fs.writeFile);
-
-
-
+const inquirer = require('inquirer'); //require is used to include built in modules in js.
+const fs = require('fs'); //fs module to access filesystem
+const generateMarkdown = require('./utils/generateMarkdown'); //path module in node that works with files and directories
 
 /* questions */
 const questions = [
@@ -68,14 +60,9 @@ const questions = [
         choices: ['MIT', 'ISC', 'Microsoft Public License']
     }
 ];
-// TODO: Create a function to write README file
-  function writeToFile(fileName, data) {
-    fs.writeFile(fileName, generateMarkdown(data), (err) => {
-        if (err) throw err;
-        console.log(`Your file ${fileName}`);
-    });
-}
-  // TODO: Create a function to initialize app
+ /* */
+  // TODO: Create a function to initialize app // writeFile asynchronously The first parameter is file name and second is text data and 
+  //third is callback to handle errors..promise using the -then handles errors locally without handling them in the function as well.
 function init() {
     console.log('Please enjoy your README generator journey');
     inquirer
@@ -83,7 +70,7 @@ function init() {
         .then(function(response) {
             const newFileName = 'README2.md';
             const generatedReadMe = generateMarkdown(response)
-            fs.writeFileSync(newFileName, generateMarkdown(response), function(err) {
+            fs.writeFileSync(newFileName, generateMarkdown(response), function(err) { //writes data to a file
                 if (err) {
                     return console.log(err);
                 }
