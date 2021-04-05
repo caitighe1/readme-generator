@@ -60,8 +60,7 @@ const questions = [
         choices: ['MIT', 'ISC', 'Microsoft Public License']
     }
 ];
- /* */
-  // TODO: Create a function to initialize app // writeFile asynchronously The first parameter is file name and second is text data and 
+  // writeFile asynchronously The first parameter is file name and second is text data and 
   //third is callback to handle errors..promise using the -then handles errors locally without handling them in the function as well.
 function init() {
     console.log('Please enjoy your README generator journey');

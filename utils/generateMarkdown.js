@@ -87,4 +87,4 @@ ${data.tests}
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = generateMarkdown;  //assigned generateMarkdown to the module.exports API property 
