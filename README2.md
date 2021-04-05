@@ -1,8 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)]
-  # caitlins-readme-generator
+  # caitlins-readme-project
   
   ## Description
-  A command line application that generates a README using inquirer in Node.
+  App
   
   ## Table of Contents
   
@@ -14,16 +14,16 @@
   * [Information](#createrInfo)
 
 ## Installation
-PLease make sure that you have Node installed, then run npm i inquirer.
+Node
 
 ## Usage
-var inquirer = require(inquirer)
+var inquirer
 
 ## Contributions
-Jonathan Gardner, Andrew Finkernagel, Robert Han, Programming with Mosh.
+Me
 
 ## Tests
-tests will be included in the demo.
+tests included
 
 ## Information
 [Email](mailto://caitighe@gmail.com)
