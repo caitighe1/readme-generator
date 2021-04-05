@@ -34,8 +34,7 @@ tests will be included in the demo.
 
 readme-screenshot![image](https://user-images.githubusercontent.com/77707975/113498528-b88e1500-94db-11eb-8fc6-09ad12b81fd2.png)
 
-<iframe src="https://drive.google.com/file/d/1DWyWrRHhfls4k2EI6E2lx42PcLmMlAz9/preview" width="640" height="480"></iframe>
-screenshot-2![image](https://user-images.githubusercontent.com/77707975/113498530-c0e65000-94db-11eb-9889-8f586aada0b8.png)
+
 
 
 
